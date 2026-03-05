@@ -5,16 +5,19 @@ const loadlessons = () => {
 
 };
 
+
+
 const displaylesson = (lessons) => {
     const levelcontainer = document.getElementById("level-container");
     levelcontainer.innerHTML = "";
-    for (let lesson of lessons) {
-        const btndiv = document.createElement("div");
-        btndiv.innerHTML = `
-            <button class="btn btn-outline btn-primary">
-            <i class="fa-solid fa-book-open"></i>Lesson - ${lesson.level_no}
-            </button>
-        `;
-        levelcontainer.append(btndiv);
+
+    for (const lesson of lessons) {
+        console.log(lesson);
+        const bntdiv = document.createElement("div");
+        bntdiv.innerHTML = `<button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Lessons - ${lesson.level_no}</button>`;
+
+        levelcontainer.append(bntdiv);
     }
 };
+
+loadlessons();
